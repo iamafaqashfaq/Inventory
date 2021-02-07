@@ -38,16 +38,10 @@ namespace Inventory.Forms
             this.Panel2 = new System.Windows.Forms.Panel();
             this.Label7 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
-            this.dtgCus_itemlist = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.Label8 = new System.Windows.Forms.Label();
-            this.dtCus_addedlist = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Button2 = new System.Windows.Forms.Button();
@@ -55,10 +49,16 @@ namespace Inventory.Forms
             this.btnCus_clear = new System.Windows.Forms.Button();
             this.btnCus_Remove = new System.Windows.Forms.Button();
             this.btnCus_save = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCus_itemlist)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCus_addedlist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
@@ -130,7 +130,7 @@ namespace Inventory.Forms
             this.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Panel2.Controls.Add(this.Label7);
             this.Panel2.Controls.Add(this.Label6);
-            this.Panel2.Controls.Add(this.dtgCus_itemlist);
+            this.Panel2.Controls.Add(this.dataGridView1);
             this.Panel2.Controls.Add(this.txtsearch);
             this.Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -158,22 +158,23 @@ namespace Inventory.Forms
             this.Label6.TabIndex = 4;
             this.Label6.Text = "Search :";
             // 
-            // dtgCus_itemlist
+            // dataGridView1
             // 
-            this.dtgCus_itemlist.AllowUserToAddRows = false;
-            this.dtgCus_itemlist.AllowUserToDeleteRows = false;
-            this.dtgCus_itemlist.AllowUserToResizeColumns = false;
-            this.dtgCus_itemlist.AllowUserToResizeRows = false;
-            this.dtgCus_itemlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgCus_itemlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgCus_itemlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCus_itemlist.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgCus_itemlist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtgCus_itemlist.Location = new System.Drawing.Point(0, 35);
-            this.dtgCus_itemlist.Name = "dtgCus_itemlist";
-            this.dtgCus_itemlist.RowHeadersVisible = false;
-            this.dtgCus_itemlist.Size = new System.Drawing.Size(748, 131);
-            this.dtgCus_itemlist.TabIndex = 0;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(748, 131);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // txtsearch
             // 
@@ -183,6 +184,7 @@ namespace Inventory.Forms
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(220, 20);
             this.txtsearch.TabIndex = 3;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // Label8
             // 
@@ -197,57 +199,28 @@ namespace Inventory.Forms
             this.Label8.TabIndex = 30;
             this.Label8.Text = "List of Added Items";
             // 
-            // dtCus_addedlist
+            // dataGridView2
             // 
-            this.dtCus_addedlist.AllowUserToAddRows = false;
-            this.dtCus_addedlist.AllowUserToDeleteRows = false;
-            this.dtCus_addedlist.AllowUserToResizeColumns = false;
-            this.dtCus_addedlist.AllowUserToResizeRows = false;
-            this.dtCus_addedlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtCus_addedlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtCus_addedlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtCus_addedlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dtCus_addedlist.Location = new System.Drawing.Point(0, 286);
-            this.dtCus_addedlist.Name = "dtCus_addedlist";
-            this.dtCus_addedlist.Size = new System.Drawing.Size(749, 164);
-            this.dtCus_addedlist.TabIndex = 31;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item Id";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Item Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Description";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Price";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Quantity";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Total Price";
-            this.Column6.Name = "Column6";
+            this.dataGridView2.Location = new System.Drawing.Point(0, 286);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(749, 164);
+            this.dataGridView2.TabIndex = 31;
+            this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             // 
             // label2
             // 
@@ -276,6 +249,7 @@ namespace Inventory.Forms
             this.Button2.TabIndex = 36;
             this.Button2.Text = "Close";
             this.Button2.UseVisualStyleBackColor = false;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btnviewStockout
             // 
@@ -298,6 +272,7 @@ namespace Inventory.Forms
             this.btnCus_clear.TabIndex = 32;
             this.btnCus_clear.Text = "Clear";
             this.btnCus_clear.UseVisualStyleBackColor = false;
+            this.btnCus_clear.Click += new System.EventHandler(this.btnCus_clear_Click);
             // 
             // btnCus_Remove
             // 
@@ -309,6 +284,7 @@ namespace Inventory.Forms
             this.btnCus_Remove.TabIndex = 33;
             this.btnCus_Remove.Text = "Remove";
             this.btnCus_Remove.UseVisualStyleBackColor = false;
+            this.btnCus_Remove.Click += new System.EventHandler(this.btnCus_Remove_Click);
             // 
             // btnCus_save
             // 
@@ -321,6 +297,41 @@ namespace Inventory.Forms
             this.btnCus_save.Text = "Save";
             this.btnCus_save.UseVisualStyleBackColor = false;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Item Id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Item Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Description";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Price";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Quantity";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Total Price";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // StockOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,19 +342,20 @@ namespace Inventory.Forms
             this.Controls.Add(this.btnCus_clear);
             this.Controls.Add(this.btnCus_Remove);
             this.Controls.Add(this.btnCus_save);
-            this.Controls.Add(this.dtCus_addedlist);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.Label8);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.Panel1);
             this.MaximizeBox = false;
             this.Name = "StockOut";
             this.Text = "StockOut";
+            this.Load += new System.EventHandler(this.StockOut_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCus_itemlist)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCus_addedlist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,16 +372,10 @@ namespace Inventory.Forms
         internal System.Windows.Forms.Panel Panel2;
         internal System.Windows.Forms.Label Label7;
         internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.DataGridView dtgCus_itemlist;
+        internal System.Windows.Forms.DataGridView dataGridView1;
         internal System.Windows.Forms.TextBox txtsearch;
         internal System.Windows.Forms.Label Label8;
-        internal System.Windows.Forms.DataGridView dtCus_addedlist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        internal System.Windows.Forms.DataGridView dataGridView2;
         internal System.Windows.Forms.Label label2;
         internal System.Windows.Forms.TextBox textBox1;
         internal System.Windows.Forms.Button Button2;
@@ -377,5 +383,11 @@ namespace Inventory.Forms
         internal System.Windows.Forms.Button btnCus_clear;
         internal System.Windows.Forms.Button btnCus_Remove;
         internal System.Windows.Forms.Button btnCus_save;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
