@@ -224,6 +224,7 @@ namespace Inventory.Forms
             this.btn_delete.TabIndex = 32;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_New
             // 
@@ -267,6 +268,7 @@ namespace Inventory.Forms
             this.dtg_listUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_listUser.Size = new System.Drawing.Size(797, 280);
             this.dtg_listUser.TabIndex = 0;
+            this.dtg_listUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listUser_CellClick);
             // 
             // ManageUser
             // 
@@ -282,6 +284,7 @@ namespace Inventory.Forms
             this.Controls.Add(this.panel1);
             this.Name = "ManageUser";
             this.Text = "ManageUser";
+            this.Load += new System.EventHandler(this.ManageUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.GroupBox1.ResumeLayout(false);

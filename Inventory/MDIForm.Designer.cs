@@ -125,7 +125,7 @@ namespace Inventory
             this.IsMdiContainer = true;
             this.Name = "MDIForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MDIForm";
+            this.Text = "Inventory";
             this.Load += new System.EventHandler(this.MDIForm_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
