@@ -105,6 +105,7 @@ namespace Inventory
             this.button2.TabIndex = 6;
             this.button2.Text = "Stock Out";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -115,6 +116,7 @@ namespace Inventory
             this.button1.TabIndex = 5;
             this.button1.Text = "Stocks";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MDIForm
             // 
@@ -123,9 +125,11 @@ namespace Inventory
             this.ClientSize = new System.Drawing.Size(1284, 726);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
+            this.MaximizeBox = false;
             this.Name = "MDIForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MDIForm_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

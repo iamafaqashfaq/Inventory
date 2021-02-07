@@ -211,6 +211,7 @@ namespace Inventory.Forms
             this.btn_update.TabIndex = 30;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
@@ -283,7 +284,7 @@ namespace Inventory.Forms
             this.Controls.Add(this.btn_New);
             this.Controls.Add(this.panel1);
             this.Name = "ManageUser";
-            this.Text = "ManageUser";
+            this.Text = "Manage User";
             this.Load += new System.EventHandler(this.ManageUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

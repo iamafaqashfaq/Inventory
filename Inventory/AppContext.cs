@@ -14,6 +14,8 @@ namespace Inventory
 
         }
         public DbSet<Model.ApplicationUser> Users { get; set; }
-        public DbSet<Model.CUSettings> CUSettings { get; set; }
+        public DbSet<Model.Category> Category { get; set; }
+        public DbSet<Model.Unit> Units { get; set; }
+        public DbSet<Model.StockItems> StockItems { get; set; }
     }
 }

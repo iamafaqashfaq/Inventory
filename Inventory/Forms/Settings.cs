@@ -25,10 +25,10 @@ namespace Inventory.Forms
             {
                 using(AppContext context = new AppContext())
                 {
-                    var findCat = context.CUSettings.Find(catUpdateID);
+                    var findCat = context.Category.Find(catUpdateID);
                     if(findCat != null)
                     {
-                        context.CUSettings.Remove(findCat);
+                        context.Category.Remove(findCat);
                         context.SaveChanges();
                         MessageBox.Show("Category Deleted Successfully");
                         CatDataGridLoader();
@@ -54,7 +54,7 @@ namespace Inventory.Forms
         {
             using(AppContext context = new AppContext())
             {
-                dataGridView1.DataSource = context.CUSettings.Where(u => u.Type == "Category").ToList();
+                dataGridView1.DataSource = context.Category.ToList();
                 dataGridView1.Columns[0].Visible = false;
             }
         }
@@ -62,7 +62,7 @@ namespace Inventory.Forms
         {
             using (AppContext context = new AppContext())
             {
-                dataGridView2.DataSource = context.CUSettings.Where(u => u.Type == "Unit").ToList();
+                dataGridView2.DataSource = context.Units.ToList();
                 dataGridView2.Columns[0].Visible = false;
             }
         }
@@ -73,12 +73,11 @@ namespace Inventory.Forms
             {
                 if (!String.IsNullOrEmpty(textBox1.Text))
                 {
-                    var newCatregory = new Model.CUSettings()
+                    var newCatregory = new Model.Category()
                     {
-                        Name = textBox1.Text,
-                        Type = "Category"
+                        Name = textBox1.Text
                     };
-                    context.CUSettings.Add(newCatregory);
+                    context.Category.Add(newCatregory);
                     context.SaveChanges();
                     CatDataGridLoader();
                     textBox1.Clear();
@@ -102,12 +101,11 @@ namespace Inventory.Forms
             {
                 if (!String.IsNullOrEmpty(textBox2.Text))
                 {
-                    var newUnit = new Model.CUSettings()
+                    var newUnit = new Model.Unit()
                     {
-                        Name = textBox2.Text,
-                        Type = "Unit"
+                        Name = textBox2.Text
                     };
-                    context.CUSettings.Add(newUnit);
+                    context.Units.Add(newUnit);
                     context.SaveChanges();
                     UnitDataGridLoader();
                     catUpdateID = 0;
@@ -146,7 +144,7 @@ namespace Inventory.Forms
                 {
                     using(AppContext context = new AppContext())
                     {
-                        var cat = context.CUSettings.FirstOrDefault(u => u.Id == catUpdateID);
+                        var cat = context.Category.FirstOrDefault(u => u.Id == catUpdateID);
                         if(cat != null)
                         {
                             cat.Name = textBox1.Text;
@@ -181,10 +179,10 @@ namespace Inventory.Forms
             {
                 using (AppContext context = new AppContext())
                 {
-                    var unit = context.CUSettings.Find(unitUpdateID);
+                    var unit = context.Units.Find(unitUpdateID);
                     if(unit != null)
                     {
-                        context.CUSettings.Remove(unit);
+                        context.Units.Remove(unit);
                         context.SaveChanges();
                         MessageBox.Show("Unit Deleted Successfully");
 
@@ -206,7 +204,7 @@ namespace Inventory.Forms
             {
                 using (AppContext context = new AppContext())
                 {
-                    var unit = context.CUSettings.FirstOrDefault(u => u.Id == unitUpdateID);
+                    var unit = context.Units.FirstOrDefault(u => u.Id == unitUpdateID);
                     if (unit != null)
                     {
                         unit.Name = textBox2.Text;

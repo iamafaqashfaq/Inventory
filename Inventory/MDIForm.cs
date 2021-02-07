@@ -116,5 +116,15 @@ namespace Inventory
         {
             showForm(new Forms.ManageUser());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            showForm(new Forms.StockMaster());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            showForm(new Forms.StockOut());
+        }
     }
 }

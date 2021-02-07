@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Inventory.Model
 {
-    class CUSettings
+    class Unit
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
     }
 }

@@ -153,5 +153,34 @@ namespace Inventory.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(userid != 0)
+                {
+                    using (AppContext context = new AppContext())
+                    {
+                        var user = context.Users.FirstOrDefault(u => u.Id == userid);
+                        if(user != null)
+                        {
+                            user.Name = txt_name.Text;
+                            user.Username = txt_username.Text;
+                            user.Password = txt_pass.Text;
+                            user.Type = cbo_type.Text;
+                            context.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                            context.SaveChanges();
+                            MessageBox.Show("Update Successful");
+                            LoadUserDataGrid();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

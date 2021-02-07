@@ -69,6 +69,18 @@
     <Compile Include="Forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StockMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockMaster.Designer.cs">
+      <DependentUpon>StockMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StockOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockOut.Designer.cs">
+      <DependentUpon>StockOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,9 +101,19 @@
     <Compile Include="Migrations\202102061454075_AddSettings.designer.cs">
       <DependentUpon>202102061454075_AddSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102070952056_SeparatedCategoryAndUnit.cs" />
+    <Compile Include="Migrations\202102070952056_SeparatedCategoryAndUnit.designer.cs">
+      <DependentUpon>202102070952056_SeparatedCategoryAndUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102070954063_AddedStockItems.cs" />
+    <Compile Include="Migrations\202102070954063_AddedStockItems.designer.cs">
+      <DependentUpon>202102070954063_AddedStockItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ApplicationUser.cs" />
-    <Compile Include="Model\CUSettings.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\StockItems.cs" />
+    <Compile Include="Model\Unit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ManageUser.resx">
@@ -99,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockMaster.resx">
+      <DependentUpon>StockMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockOut.resx">
+      <DependentUpon>StockOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -111,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102061454075_AddSettings.resx">
       <DependentUpon>202102061454075_AddSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102070952056_SeparatedCategoryAndUnit.resx">
+      <DependentUpon>202102070952056_SeparatedCategoryAndUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102070954063_AddedStockItems.resx">
+      <DependentUpon>202102070954063_AddedStockItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
