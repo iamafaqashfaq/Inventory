@@ -81,6 +81,12 @@
     <Compile Include="Forms\StockOut.Designer.cs">
       <DependentUpon>StockOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StockOutList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockOutList.Designer.cs">
+      <DependentUpon>StockOutList.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <EmbeddedResource Include="Forms\StockOut.resx">
       <DependentUpon>StockOut.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockOutList.resx">
+      <DependentUpon>StockOutList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Includes\inventory.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
