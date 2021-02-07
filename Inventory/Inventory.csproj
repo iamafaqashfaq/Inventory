@@ -113,6 +113,7 @@
     <Compile Include="Model\ApplicationUser.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\StockItems.cs" />
+    <Compile Include="Model\StockOut.cs" />
     <Compile Include="Model\Unit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

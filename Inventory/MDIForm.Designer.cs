@@ -33,7 +33,6 @@ namespace Inventory
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -44,7 +43,6 @@ namespace Inventory
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -57,7 +55,7 @@ namespace Inventory
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button6.Location = new System.Drawing.Point(3, 416);
+            this.button6.Location = new System.Drawing.Point(3, 337);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(124, 73);
             this.button6.TabIndex = 10;
@@ -68,7 +66,7 @@ namespace Inventory
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button5.Location = new System.Drawing.Point(3, 337);
+            this.button5.Location = new System.Drawing.Point(3, 258);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 73);
             this.button5.TabIndex = 9;
@@ -79,22 +77,12 @@ namespace Inventory
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button4.Location = new System.Drawing.Point(3, 258);
+            this.button4.Location = new System.Drawing.Point(3, 179);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 73);
             this.button4.TabIndex = 8;
             this.button4.Text = "Reports";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button3.Location = new System.Drawing.Point(3, 179);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 73);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Customers";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -139,7 +127,6 @@ namespace Inventory
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
