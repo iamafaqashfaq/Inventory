@@ -30,6 +30,8 @@ namespace Inventory.Forms
         private void InitializeComponent()
         {
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
             this.Label15 = new System.Windows.Forms.Label();
@@ -42,19 +44,17 @@ namespace Inventory.Forms
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.Label8 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Button2 = new System.Windows.Forms.Button();
-            this.btnviewStockout = new System.Windows.Forms.Button();
-            this.btnCus_clear = new System.Windows.Forms.Button();
-            this.btnCus_Remove = new System.Windows.Forms.Button();
-            this.btnCus_save = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.btnviewStockout = new System.Windows.Forms.Button();
+            this.btnCus_clear = new System.Windows.Forms.Button();
+            this.btnCus_Remove = new System.Windows.Forms.Button();
+            this.btnCus_save = new System.Windows.Forms.Button();
             this.Panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -77,6 +77,22 @@ namespace Inventory.Forms
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(750, 88);
             this.Panel1.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Contact Number:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(96, 58);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(220, 20);
+            this.textBox1.TabIndex = 4;
             // 
             // Label1
             // 
@@ -108,7 +124,6 @@ namespace Inventory.Forms
             // 
             // txtCus_lname
             // 
-            this.txtCus_lname.Enabled = false;
             this.txtCus_lname.Location = new System.Drawing.Point(375, 30);
             this.txtCus_lname.Name = "txtCus_lname";
             this.txtCus_lname.Size = new System.Drawing.Size(220, 20);
@@ -118,7 +133,6 @@ namespace Inventory.Forms
             // 
             this.txtCus_fname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCus_fname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCus_fname.Enabled = false;
             this.txtCus_fname.Location = new System.Drawing.Point(96, 30);
             this.txtCus_fname.Name = "txtCus_fname";
             this.txtCus_fname.Size = new System.Drawing.Size(205, 20);
@@ -222,22 +236,40 @@ namespace Inventory.Forms
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             // 
-            // label2
+            // Column1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Contact Number:";
+            this.Column1.HeaderText = "Item Id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // textBox1
+            // Column2
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(96, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 20);
-            this.textBox1.TabIndex = 4;
+            this.Column2.HeaderText = "Item Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Description";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Price";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Quantity";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Total Price";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Button2
             // 
@@ -261,6 +293,7 @@ namespace Inventory.Forms
             this.btnviewStockout.TabIndex = 35;
             this.btnviewStockout.Text = "View List";
             this.btnviewStockout.UseVisualStyleBackColor = false;
+            this.btnviewStockout.Click += new System.EventHandler(this.btnviewStockout_Click);
             // 
             // btnCus_clear
             // 
@@ -296,41 +329,7 @@ namespace Inventory.Forms
             this.btnCus_save.TabIndex = 34;
             this.btnCus_save.Text = "Save";
             this.btnCus_save.UseVisualStyleBackColor = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item Id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Item Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Description";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Price";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Quantity";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Total Price";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.btnCus_save.Click += new System.EventHandler(this.btnCus_save_Click);
             // 
             // StockOut
             // 

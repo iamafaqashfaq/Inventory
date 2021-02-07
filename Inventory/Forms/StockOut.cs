@@ -52,6 +52,13 @@ namespace Inventory.Forms
         private void btnCus_clear_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
+            foreach(Control obj in Panel1.Controls)
+            {
+                if(obj is TextBox)
+                {
+                    obj.Text = "";
+                }
+            }
         }
 
         private void StockOut_Load(object sender, EventArgs e)
@@ -140,6 +147,66 @@ namespace Inventory.Forms
         private void btnCus_Remove_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
+        }
+
+        private void btnCus_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dataGridView2.Rows.Count != 0)
+                {
+                    using (AppContext context = new AppContext())
+                    {
+                        bool add = true;
+                        List<Model.StockOut> stockOutList = new List<Model.StockOut>();
+                        foreach (DataGridViewRow row in dataGridView2.Rows)
+                        {
+                            int id = Convert.ToInt32(row.Cells[0].Value);
+                            var stockItem = context.StockItems.FirstOrDefault(u => u.Id == id);
+                            if(stockItem.Qty >= Convert.ToInt32(row.Cells[4].Value))
+                            {
+                                stockItem.Qty = stockItem.Qty - Convert.ToInt32(row.Cells[4].Value);
+                                context.Entry(stockItem).State = System.Data.Entity.EntityState.Modified;
+                                context.SaveChanges();
+                                stockOutList.Add(new Model.StockOut()
+                                {
+                                    StockItemId = Convert.ToInt32(row.Cells[0].Value),
+                                    FirstName = txtCus_fname.Text,
+                                    LastName = txtCus_lname.Text,
+                                    ContactNumber = textBox1.Text,
+                                    Qty = Convert.ToInt32(row.Cells[4].Value),
+                                    Price = Convert.ToDouble(row.Cells[3].Value),
+                                    TotalPrice = Convert.ToDouble(row.Cells[5].Value),
+                                    TransactionDate = DateTime.Now
+                                });
+                            } else
+                            {
+                                add = false;
+                                MessageBox.Show("There are total " + stockItem.Qty.ToString() + " " + row.Cells[1].Value.ToString() + "\' in Stock");
+                            }
+                        }
+                        if (add)
+                        {
+                            context.StockOut.AddRange(stockOutList);
+                            context.SaveChanges();
+                            MessageBox.Show("Added Successfully");
+                            LoadItemGrid();
+                            btnCus_clear_Click(sender, e);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnviewStockout_Click(object sender, EventArgs e)
+        {
+            StockOutList sol = new StockOutList();
+            sol.Show();
         }
     }
 }
