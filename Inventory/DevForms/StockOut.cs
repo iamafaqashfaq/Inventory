@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
-namespace Inventory.Forms
+namespace Inventory.DevForms
 {
-    public partial class StockOut : Form
+    public partial class StockOut : DevExpress.XtraEditors.XtraForm
     {
         public StockOut()
         {
@@ -37,7 +40,7 @@ namespace Inventory.Forms
                 dataGridView1.Columns[7].Visible = false;
                 dataGridView1.Columns[8].Visible = false;
             }
-            
+
         }
         private void Label2_Click(object sender, EventArgs e)
         {
@@ -52,9 +55,9 @@ namespace Inventory.Forms
         private void btnCus_clear_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
-            foreach(Control obj in Panel1.Controls)
+            foreach (Control obj in Panel1.Controls)
             {
-                if(obj is TextBox)
+                if (obj is TextBox)
                 {
                     obj.Text = "";
                 }
@@ -113,7 +116,7 @@ namespace Inventory.Forms
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
                     var i = Convert.ToInt32(row.Cells[0].Value);
-                    if(i == Convert.ToInt32(selectedRow.Cells[0].Value))
+                    if (i == Convert.ToInt32(selectedRow.Cells[0].Value))
                     {
                         row.Cells[4].Value = Convert.ToInt32(row.Cells[4].Value) + 1;
                         row.Cells[5].Value = Convert.ToInt32(row.Cells[4].Value) * Convert.ToDouble(selectedRow.Cells[4].Value);
@@ -153,17 +156,18 @@ namespace Inventory.Forms
         {
             try
             {
-                if(dataGridView2.Rows.Count != 0)
+                if (dataGridView2.Rows.Count != 0)
                 {
                     using (AppContext context = new AppContext())
                     {
                         bool add = true;
                         List<Model.StockOut> stockOutList = new List<Model.StockOut>();
+                        string uuid = System.Guid.NewGuid().ToString();
                         foreach (DataGridViewRow row in dataGridView2.Rows)
                         {
                             int id = Convert.ToInt32(row.Cells[0].Value);
                             var stockItem = context.StockItems.FirstOrDefault(u => u.Id == id);
-                            if(stockItem.Qty >= Convert.ToInt32(row.Cells[4].Value))
+                            if (stockItem.Qty >= Convert.ToInt32(row.Cells[4].Value))
                             {
                                 stockItem.Qty = stockItem.Qty - Convert.ToInt32(row.Cells[4].Value);
                                 context.Entry(stockItem).State = System.Data.Entity.EntityState.Modified;
@@ -171,15 +175,17 @@ namespace Inventory.Forms
                                 stockOutList.Add(new Model.StockOut()
                                 {
                                     StockItemId = Convert.ToInt32(row.Cells[0].Value),
-                                    FirstName = txtCus_fname.Text,
-                                    LastName = txtCus_lname.Text,
+                                    FirstName = txtCus_fname.Text == "" ? "Cash Sale" : txtCus_fname.Text,
+                                    LastName = txtCus_lname.Text == "" ? "" : txtCus_lname.Text,
                                     ContactNumber = textBox1.Text,
                                     Qty = Convert.ToInt32(row.Cells[4].Value),
                                     Price = Convert.ToDouble(row.Cells[3].Value),
                                     TotalPrice = Convert.ToDouble(row.Cells[5].Value),
-                                    TransactionDate = DateTime.Now
+                                    TransactionDate = DateTime.Now,
+                                    TransactionID = uuid
                                 });
-                            } else
+                            }
+                            else
                             {
                                 add = false;
                                 MessageBox.Show("There are total " + stockItem.Qty.ToString() + " " + row.Cells[1].Value.ToString() + "\' in Stock");
@@ -191,6 +197,12 @@ namespace Inventory.Forms
                             context.SaveChanges();
                             MessageBox.Show("Added Successfully");
                             LoadItemGrid();
+                            var date = stockOutList[0].TransactionDate;
+                            DevForms.Reports.Invoice.SaleInvoice saleinvoice = new Reports.Invoice.SaleInvoice();
+                            saleinvoice.DataSource = context.StockOut.Include(u => u.StockItems).Where(c => c.TransactionID == uuid).ToList();
+                            saleinvoice.CreateDocument();
+                            ReportPrintTool reportPrintingTool = new ReportPrintTool(saleinvoice);
+                            reportPrintingTool.PrintDialog();
                             btnCus_clear_Click(sender, e);
                         }
                     }
@@ -204,6 +216,10 @@ namespace Inventory.Forms
         }
 
         private void btnviewStockout_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnviewStockout_Click_1(object sender, EventArgs e)
         {
             StockOutList sol = new StockOutList();
             sol.Show();

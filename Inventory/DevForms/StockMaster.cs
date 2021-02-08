@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory.Forms
+namespace Inventory.DevForms
 {
-    public partial class StockMaster : Form
+    public partial class StockMaster : DevExpress.XtraEditors.XtraForm
     {
         int itemUpdateId = 0;
         public StockMaster()
         {
             InitializeComponent();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -73,7 +73,7 @@ namespace Inventory.Forms
                 {
                     obj.Text = "";
                 }
-                if(obj is RichTextBox)
+                if (obj is RichTextBox)
                 {
                     obj.Text = "";
                 }
@@ -115,10 +115,10 @@ namespace Inventory.Forms
             {
                 using (AppContext context = new AppContext())
                 {
-                    if(itemUpdateId != 0)
+                    if (itemUpdateId != 0)
                     {
                         var item = context.StockItems.Find(itemUpdateId);
-                        if(item != null)
+                        if (item != null)
                         {
                             context.StockItems.Remove(item);
                             context.SaveChanges();
@@ -183,7 +183,7 @@ namespace Inventory.Forms
                 using (AppContext context = new AppContext())
                 {
                     var item = context.StockItems.Find(itemUpdateId);
-                    if(item != null)
+                    if (item != null)
                     {
                         item.Name = txtname.Text;
                         item.Description = txtdescription.Text;
@@ -209,10 +209,11 @@ namespace Inventory.Forms
         {
             try
             {
-                if(txtsearch.Text == "")
+                if (txtsearch.Text == "")
                 {
                     LoadDataGridView();
-                } else
+                }
+                else
                 {
                     using (AppContext context = new AppContext())
                     {

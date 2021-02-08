@@ -1,5 +1,5 @@
 ﻿
-namespace Inventory.Forms
+namespace Inventory.DevForms
 {
     partial class StockOutList
     {
@@ -38,18 +38,18 @@ namespace Inventory.Forms
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(249, 14);
+            this.Label1.Location = new System.Drawing.Point(463, 9);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(47, 13);
-            this.Label1.TabIndex = 21;
+            this.Label1.TabIndex = 24;
             this.Label1.Text = "Search: ";
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(302, 11);
+            this.txtsearch.Location = new System.Drawing.Point(516, 6);
             this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(463, 20);
-            this.txtsearch.TabIndex = 20;
+            this.txtsearch.Size = new System.Drawing.Size(463, 21);
+            this.txtsearch.TabIndex = 23;
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // dtglist
@@ -63,22 +63,21 @@ namespace Inventory.Forms
             this.dtglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtglist.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtglist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtglist.Location = new System.Drawing.Point(0, 47);
+            this.dtglist.Location = new System.Drawing.Point(0, 39);
             this.dtglist.Name = "dtglist";
-            this.dtglist.Size = new System.Drawing.Size(800, 403);
-            this.dtglist.TabIndex = 19;
+            this.dtglist.Size = new System.Drawing.Size(990, 561);
+            this.dtglist.TabIndex = 22;
             // 
             // StockOutList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(990, 600);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.dtglist);
-            this.MaximizeBox = false;
             this.Name = "StockOutList";
-            this.Text = "StockOutList";
+            this.Text = "Stock Out List";
             this.Load += new System.EventHandler(this.StockOutList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtglist)).EndInit();
             this.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory.Forms
+namespace Inventory.DevForms
 {
-    public partial class StockOutList : Form
+    public partial class StockOutList : DevExpress.XtraEditors.XtraForm
     {
         public StockOutList()
         {
@@ -44,7 +45,6 @@ namespace Inventory.Forms
         {
             LoadDataGridView();
         }
-
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             try
@@ -57,9 +57,9 @@ namespace Inventory.Forms
                 {
                     using (AppContext context = new AppContext())
                     {
-                        dtglist.DataSource = context.StockOut.Where(u => u.StockItems.Name.Contains(txtsearch.Text) 
-                        || u.StockItems.Description.Contains(txtsearch.Text) || u.StockItems.Category.Name.Contains(txtsearch.Text) 
-                        || u.FirstName.Contains(txtsearch.Text) || u.LastName.Contains(txtsearch.Text) 
+                        dtglist.DataSource = context.StockOut.Where(u => u.StockItems.Name.Contains(txtsearch.Text)
+                        || u.StockItems.Description.Contains(txtsearch.Text) || u.StockItems.Category.Name.Contains(txtsearch.Text)
+                        || u.FirstName.Contains(txtsearch.Text) || u.LastName.Contains(txtsearch.Text)
                         || u.ContactNumber.Contains(txtsearch.Text)).OrderByDescending(t => t.TransactionDate).Select(x => new
                         {
                             CustomerName = x.FirstName + " " + x.LastName,

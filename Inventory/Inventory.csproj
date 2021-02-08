@@ -36,16 +36,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -67,11 +81,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppContext.cs" />
+    <Compile Include="DevForms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForms\ManageUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DevForms\ManageUser.Designer.cs">
       <DependentUpon>ManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForms\Reports\Invoice\SaleInvoice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevForms\Reports\Invoice\SaleInvoice.Designer.cs">
+      <DependentUpon>SaleInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForms\Settings.cs">
       <SubType>Form</SubType>
@@ -79,35 +105,23 @@
     <Compile Include="DevForms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockMaster.cs">
+    <Compile Include="DevForms\StockMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockMaster.Designer.cs">
+    <Compile Include="DevForms\StockMaster.Designer.cs">
       <DependentUpon>StockMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockOut.cs">
+    <Compile Include="DevForms\StockOut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockOut.Designer.cs">
+    <Compile Include="DevForms\StockOut.Designer.cs">
       <DependentUpon>StockOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockOutList.cs">
+    <Compile Include="DevForms\StockOutList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockOutList.Designer.cs">
+    <Compile Include="DevForms\StockOutList.Designer.cs">
       <DependentUpon>StockOutList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MDIForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIForm.Designer.cs">
-      <DependentUpon>MDIForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202102061434487_AddUSer.cs" />
     <Compile Include="Migrations\202102061434487_AddUSer.designer.cs">
@@ -125,6 +139,10 @@
     <Compile Include="Migrations\202102070954063_AddedStockItems.designer.cs">
       <DependentUpon>202102070954063_AddedStockItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102081701389_AddedTransactionID.cs" />
+    <Compile Include="Migrations\202102081701389_AddedTransactionID.designer.cs">
+      <DependentUpon>202102081701389_AddedTransactionID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ApplicationUser.cs" />
     <Compile Include="Model\Category.cs" />
@@ -139,26 +157,26 @@
     <Compile Include="RibbonForm.Designer.cs">
       <DependentUpon>RibbonForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DevForms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevForms\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForms\Reports\Invoice\SaleInvoice.resx">
+      <DependentUpon>SaleInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockMaster.resx">
+    <EmbeddedResource Include="DevForms\StockMaster.resx">
       <DependentUpon>StockMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockOut.resx">
+    <EmbeddedResource Include="DevForms\StockOut.resx">
       <DependentUpon>StockOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockOutList.resx">
+    <EmbeddedResource Include="DevForms\StockOutList.resx">
       <DependentUpon>StockOutList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MDIForm.resx">
-      <DependentUpon>MDIForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102061434487_AddUSer.resx">
       <DependentUpon>202102061434487_AddUSer.cs</DependentUpon>
@@ -171,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102070954063_AddedStockItems.resx">
       <DependentUpon>202102070954063_AddedStockItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102081701389_AddedTransactionID.resx">
+      <DependentUpon>202102081701389_AddedTransactionID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -202,6 +223,7 @@
   <ItemGroup>
     <Content Include="Includes\inventory.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -18,6 +18,7 @@ namespace Inventory.Model
         public double Price { get; set; }
         public double TotalPrice { get; set; }
         public DateTime TransactionDate { get; set; }
+        public string TransactionID { get; set; }
         [ForeignKey("StockItemId")]
         public StockItems StockItems { get; set; }
     }
