@@ -1,5 +1,5 @@
 ﻿
-namespace Inventory.Forms
+namespace Inventory.DevForms
 {
     partial class ManageUser
     {
@@ -29,7 +29,6 @@ namespace Inventory.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageUser));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.lbl_id = new System.Windows.Forms.Label();
@@ -40,13 +39,13 @@ namespace Inventory.Forms
             this.Label4 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
-            this.Button1 = new System.Windows.Forms.Button();
-            this.btn_saveuser = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_New = new System.Windows.Forms.Button();
+            this.btn_saveuser = new DevExpress.XtraEditors.SimpleButton();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.dtg_listUser = new System.Windows.Forms.DataGridView();
+            this.btn_New = new DevExpress.XtraEditors.SimpleButton();
+            this.closeBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_update = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listUser)).BeginInit();
@@ -54,7 +53,7 @@ namespace Inventory.Forms
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.Controls.Add(this.txt_name);
             this.panel1.Controls.Add(this.lbl_id);
             this.panel1.Controls.Add(this.cbo_type);
@@ -67,8 +66,8 @@ namespace Inventory.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 165);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(873, 165);
+            this.panel1.TabIndex = 1;
             // 
             // txt_name
             // 
@@ -105,8 +104,9 @@ namespace Inventory.Forms
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.BackColor = System.Drawing.Color.White;
+            this.Label1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Label1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.ForeColor = System.Drawing.Color.White;
             this.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Label1.Location = new System.Drawing.Point(246, 30);
             this.Label1.Name = "Label1";
@@ -126,9 +126,9 @@ namespace Inventory.Forms
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.BackColor = System.Drawing.Color.White;
+            this.Label2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Label2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Image = ((System.Drawing.Image)(resources.GetObject("Label2.Image")));
+            this.Label2.ForeColor = System.Drawing.Color.White;
             this.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Label2.Location = new System.Drawing.Point(220, 60);
             this.Label2.Name = "Label2";
@@ -139,9 +139,9 @@ namespace Inventory.Forms
             // Label4
             // 
             this.Label4.AutoSize = true;
-            this.Label4.BackColor = System.Drawing.Color.White;
+            this.Label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Image = ((System.Drawing.Image)(resources.GetObject("Label4.Image")));
+            this.Label4.ForeColor = System.Drawing.Color.White;
             this.Label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Label4.Location = new System.Drawing.Point(246, 120);
             this.Label4.Name = "Label4";
@@ -160,9 +160,9 @@ namespace Inventory.Forms
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.BackColor = System.Drawing.Color.White;
+            this.Label3.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Label3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Image = ((System.Drawing.Image)(resources.GetObject("Label3.Image")));
+            this.Label3.ForeColor = System.Drawing.Color.White;
             this.Label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Label3.Location = new System.Drawing.Point(223, 90);
             this.Label3.Name = "Label3";
@@ -170,86 +170,26 @@ namespace Inventory.Forms
             this.Label3.TabIndex = 16;
             this.Label3.Text = "Password :";
             // 
-            // Button1
-            // 
-            this.Button1.BackColor = System.Drawing.Color.Transparent;
-            this.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Button1.Location = new System.Drawing.Point(625, 171);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(132, 26);
-            this.Button1.TabIndex = 33;
-            this.Button1.Text = "Close";
-            this.Button1.UseVisualStyleBackColor = false;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // btn_saveuser
             // 
-            this.btn_saveuser.BackColor = System.Drawing.Color.Transparent;
-            this.btn_saveuser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_saveuser.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_saveuser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_saveuser.Location = new System.Drawing.Point(68, 172);
+            this.btn_saveuser.Location = new System.Drawing.Point(143, 171);
             this.btn_saveuser.Name = "btn_saveuser";
-            this.btn_saveuser.Size = new System.Drawing.Size(138, 26);
-            this.btn_saveuser.TabIndex = 29;
+            this.btn_saveuser.Size = new System.Drawing.Size(112, 23);
+            this.btn_saveuser.TabIndex = 39;
             this.btn_saveuser.Text = "Save";
-            this.btn_saveuser.UseVisualStyleBackColor = false;
-            this.btn_saveuser.Click += new System.EventHandler(this.btn_saveuser_Click);
-            // 
-            // btn_update
-            // 
-            this.btn_update.BackColor = System.Drawing.Color.Transparent;
-            this.btn_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_update.Enabled = false;
-            this.btn_update.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_update.Location = new System.Drawing.Point(212, 171);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(138, 26);
-            this.btn_update.TabIndex = 30;
-            this.btn_update.Text = "Update";
-            this.btn_update.UseVisualStyleBackColor = false;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
-            this.btn_delete.Enabled = false;
-            this.btn_delete.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_delete.Location = new System.Drawing.Point(356, 170);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(125, 26);
-            this.btn_delete.TabIndex = 32;
-            this.btn_delete.Text = "Delete";
-            this.btn_delete.UseVisualStyleBackColor = false;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // btn_New
-            // 
-            this.btn_New.BackColor = System.Drawing.Color.Transparent;
-            this.btn_New.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_New.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_New.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_New.Location = new System.Drawing.Point(487, 170);
-            this.btn_New.Name = "btn_New";
-            this.btn_New.Size = new System.Drawing.Size(132, 26);
-            this.btn_New.TabIndex = 31;
-            this.btn_New.Text = "New";
-            this.btn_New.UseVisualStyleBackColor = false;
-            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            this.btn_saveuser.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.GroupBox1.Controls.Add(this.dtg_listUser);
-            this.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GroupBox1.Location = new System.Drawing.Point(0, 202);
+            this.GroupBox1.Location = new System.Drawing.Point(0, 200);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(803, 299);
-            this.GroupBox1.TabIndex = 34;
+            this.GroupBox1.Size = new System.Drawing.Size(873, 288);
+            this.GroupBox1.TabIndex = 40;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "List Of User";
             // 
@@ -263,28 +203,65 @@ namespace Inventory.Forms
             this.dtg_listUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_listUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtg_listUser.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtg_listUser.Location = new System.Drawing.Point(3, 16);
+            this.dtg_listUser.Location = new System.Drawing.Point(3, 17);
             this.dtg_listUser.Name = "dtg_listUser";
             this.dtg_listUser.RowHeadersVisible = false;
             this.dtg_listUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_listUser.Size = new System.Drawing.Size(797, 280);
+            this.dtg_listUser.Size = new System.Drawing.Size(867, 268);
             this.dtg_listUser.TabIndex = 0;
             this.dtg_listUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listUser_CellClick);
+            // 
+            // btn_New
+            // 
+            this.btn_New.Location = new System.Drawing.Point(497, 171);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(112, 23);
+            this.btn_New.TabIndex = 48;
+            this.btn_New.Text = "New";
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(615, 171);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(112, 23);
+            this.closeBtn.TabIndex = 47;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(379, 171);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(112, 23);
+            this.btn_delete.TabIndex = 46;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(261, 171);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(112, 23);
+            this.btn_update.TabIndex = 45;
+            this.btn_update.Text = "Update";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 501);
-            this.Controls.Add(this.GroupBox1);
-            this.Controls.Add(this.Button1);
-            this.Controls.Add(this.btn_saveuser);
-            this.Controls.Add(this.btn_update);
-            this.Controls.Add(this.btn_delete);
+            this.ClientSize = new System.Drawing.Size(873, 488);
             this.Controls.Add(this.btn_New);
+            this.Controls.Add(this.closeBtn);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_update);
+            this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.btn_saveuser);
             this.Controls.Add(this.panel1);
             this.Name = "ManageUser";
-            this.Text = "Manage User";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ManageUser";
             this.Load += new System.EventHandler(this.ManageUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -306,12 +283,12 @@ namespace Inventory.Forms
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.TextBox txt_username;
         internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.Button Button1;
-        internal System.Windows.Forms.Button btn_saveuser;
-        internal System.Windows.Forms.Button btn_update;
-        internal System.Windows.Forms.Button btn_delete;
-        internal System.Windows.Forms.Button btn_New;
+        private DevExpress.XtraEditors.SimpleButton btn_saveuser;
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.DataGridView dtg_listUser;
+        private DevExpress.XtraEditors.SimpleButton btn_New;
+        private DevExpress.XtraEditors.SimpleButton closeBtn;
+        private DevExpress.XtraEditors.SimpleButton btn_delete;
+        private DevExpress.XtraEditors.SimpleButton btn_update;
     }
 }
