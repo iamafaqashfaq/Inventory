@@ -109,7 +109,6 @@ namespace Inventory
 
         private void button5_Click(object sender, EventArgs e)
         {
-            showForm(new Forms.Settings());
         }
 
         private void button6_Click(object sender, EventArgs e)
