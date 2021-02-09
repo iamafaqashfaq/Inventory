@@ -39,13 +39,13 @@ namespace Inventory.DevForms
             this.Label4 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
-            this.btn_saveuser = new DevExpress.XtraEditors.SimpleButton();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.dtg_listUser = new System.Windows.Forms.DataGridView();
             this.btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.closeBtn = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_saveuser = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listUser)).BeginInit();
@@ -170,15 +170,6 @@ namespace Inventory.DevForms
             this.Label3.TabIndex = 16;
             this.Label3.Text = "Password :";
             // 
-            // btn_saveuser
-            // 
-            this.btn_saveuser.Location = new System.Drawing.Point(143, 171);
-            this.btn_saveuser.Name = "btn_saveuser";
-            this.btn_saveuser.Size = new System.Drawing.Size(112, 23);
-            this.btn_saveuser.TabIndex = 39;
-            this.btn_saveuser.Text = "Save";
-            this.btn_saveuser.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // GroupBox1
             // 
             this.GroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -213,6 +204,8 @@ namespace Inventory.DevForms
             // 
             // btn_New
             // 
+            this.btn_New.ImageOptions.Image = global::Inventory.Properties.Resources.pencolor_16x16;
+            this.btn_New.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_New.Location = new System.Drawing.Point(497, 171);
             this.btn_New.Name = "btn_New";
             this.btn_New.Size = new System.Drawing.Size(112, 23);
@@ -222,6 +215,8 @@ namespace Inventory.DevForms
             // 
             // closeBtn
             // 
+            this.closeBtn.ImageOptions.Image = global::Inventory.Properties.Resources.close_16x16;
+            this.closeBtn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.closeBtn.Location = new System.Drawing.Point(615, 171);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(112, 23);
@@ -231,6 +226,8 @@ namespace Inventory.DevForms
             // 
             // btn_delete
             // 
+            this.btn_delete.ImageOptions.Image = global::Inventory.Properties.Resources.trash_16x16;
+            this.btn_delete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_delete.Location = new System.Drawing.Point(379, 171);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(112, 23);
@@ -240,12 +237,25 @@ namespace Inventory.DevForms
             // 
             // btn_update
             // 
+            this.btn_update.ImageOptions.Image = global::Inventory.Properties.Resources.recurrence_16x16;
+            this.btn_update.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_update.Location = new System.Drawing.Point(261, 171);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(112, 23);
             this.btn_update.TabIndex = 45;
             this.btn_update.Text = "Update";
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // btn_saveuser
+            // 
+            this.btn_saveuser.ImageOptions.Image = global::Inventory.Properties.Resources.saveall_16x16;
+            this.btn_saveuser.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btn_saveuser.Location = new System.Drawing.Point(143, 171);
+            this.btn_saveuser.Name = "btn_saveuser";
+            this.btn_saveuser.Size = new System.Drawing.Size(112, 23);
+            this.btn_saveuser.TabIndex = 39;
+            this.btn_saveuser.Text = "Save";
+            this.btn_saveuser.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // ManageUser
             // 

@@ -99,6 +99,24 @@
     <Compile Include="DevForms\Reports\Invoice\SaleInvoice.Designer.cs">
       <DependentUpon>SaleInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForms\Reports\ListOfItems.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevForms\Reports\ListOfItems.Designer.cs">
+      <DependentUpon>ListOfItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForms\Reports\ListOfSoldItems.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevForms\Reports\ListOfSoldItems.Designer.cs">
+      <DependentUpon>ListOfSoldItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevForms\Reports\ListOfStockItemByDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevForms\Reports\ListOfStockItemByDate.Designer.cs">
+      <DependentUpon>ListOfStockItemByDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevForms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +169,12 @@
     <Compile Include="Model\Unit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RibbonForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +189,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevForms\Reports\Invoice\SaleInvoice.resx">
       <DependentUpon>SaleInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForms\Reports\ListOfItems.resx">
+      <DependentUpon>ListOfItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForms\Reports\ListOfSoldItems.resx">
+      <DependentUpon>ListOfSoldItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevForms\Reports\ListOfStockItemByDate.resx">
+      <DependentUpon>ListOfStockItemByDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -202,7 +235,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RibbonForm.resx">
       <DependentUpon>RibbonForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +259,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Includes\inventory.png" />
+    <None Include="Resources\saveall_16x16.png" />
+    <None Include="Resources\recurrence_16x16.png" />
+    <None Include="Resources\trash_16x16.png" />
+    <None Include="Resources\pencolor_16x16.png" />
+    <None Include="Resources\close_16x16.png" />
+    <None Include="Resources\print.svg" />
+    <None Include="Resources\viewsettings.svg" />
+    <None Include="Resources\bo_user.svg" />
+    <None Include="Resources\salesanalysis.svg" />
+    <None Include="Resources\chart.svg" />
+    <None Include="Resources\insertlistbox1.svg" />
+    <None Include="Resources\insertlistbox.svg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

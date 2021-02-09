@@ -51,6 +51,7 @@ namespace Inventory
             barButtonItem2.Enabled = true;
             barButtonItem3.Enabled = true;
             barButtonItem4.Enabled = true;
+            barButtonItem5.Enabled = true;
         }
         public void disableControls()
         {
@@ -58,6 +59,7 @@ namespace Inventory
             barButtonItem2.Enabled = false;
             barButtonItem3.Enabled = false;
             barButtonItem4.Enabled = false;
+            barButtonItem5.Enabled = false;
         }
         private void RibbonForm_Load(object sender, EventArgs e)
         {
@@ -69,7 +71,9 @@ namespace Inventory
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            ReportsForm r = new ReportsForm();
+            r.MdiParent = this;
+            r.Show();
         }
     }
 }

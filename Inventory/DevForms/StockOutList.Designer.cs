@@ -32,6 +32,7 @@ namespace Inventory.DevForms
             this.Label1 = new System.Windows.Forms.Label();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.dtglist = new System.Windows.Forms.DataGridView();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtglist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,16 +64,28 @@ namespace Inventory.DevForms
             this.dtglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtglist.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtglist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtglist.Location = new System.Drawing.Point(0, 39);
+            this.dtglist.Location = new System.Drawing.Point(0, 54);
             this.dtglist.Name = "dtglist";
-            this.dtglist.Size = new System.Drawing.Size(990, 561);
+            this.dtglist.Size = new System.Drawing.Size(990, 546);
             this.dtglist.TabIndex = 22;
+            this.dtglist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtglist_CellClick);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.SvgImage = global::Inventory.Properties.Resources.print;
+            this.simpleButton1.Location = new System.Drawing.Point(12, 6);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(115, 42);
+            this.simpleButton1.TabIndex = 25;
+            this.simpleButton1.Text = "Print Receipt";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // StockOutList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 600);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.dtglist);
@@ -90,5 +103,6 @@ namespace Inventory.DevForms
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.TextBox txtsearch;
         internal System.Windows.Forms.DataGridView dtglist;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
