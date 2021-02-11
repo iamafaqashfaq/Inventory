@@ -7,13 +7,13 @@ namespace Inventory.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class SeparatedCategoryAndUnit : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SeparatedCategoryAndUnit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102070952056_SeparatedCategoryAndUnit"; }
+            get { return "202102111815235_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

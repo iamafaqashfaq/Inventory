@@ -141,25 +141,9 @@
     <Compile Include="DevForms\StockOutList.Designer.cs">
       <DependentUpon>StockOutList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202102061434487_AddUSer.cs" />
-    <Compile Include="Migrations\202102061434487_AddUSer.designer.cs">
-      <DependentUpon>202102061434487_AddUSer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102061454075_AddSettings.cs" />
-    <Compile Include="Migrations\202102061454075_AddSettings.designer.cs">
-      <DependentUpon>202102061454075_AddSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102070952056_SeparatedCategoryAndUnit.cs" />
-    <Compile Include="Migrations\202102070952056_SeparatedCategoryAndUnit.designer.cs">
-      <DependentUpon>202102070952056_SeparatedCategoryAndUnit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102070954063_AddedStockItems.cs" />
-    <Compile Include="Migrations\202102070954063_AddedStockItems.designer.cs">
-      <DependentUpon>202102070954063_AddedStockItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102081701389_AddedTransactionID.cs" />
-    <Compile Include="Migrations\202102081701389_AddedTransactionID.designer.cs">
-      <DependentUpon>202102081701389_AddedTransactionID.cs</DependentUpon>
+    <Compile Include="Migrations\202102111815235_InitialCreate.cs" />
+    <Compile Include="Migrations\202102111815235_InitialCreate.designer.cs">
+      <DependentUpon>202102111815235_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ApplicationUser.cs" />
@@ -217,20 +201,8 @@
     <EmbeddedResource Include="DevForms\StockOutList.resx">
       <DependentUpon>StockOutList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102061434487_AddUSer.resx">
-      <DependentUpon>202102061434487_AddUSer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102061454075_AddSettings.resx">
-      <DependentUpon>202102061454075_AddSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102070952056_SeparatedCategoryAndUnit.resx">
-      <DependentUpon>202102070952056_SeparatedCategoryAndUnit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102070954063_AddedStockItems.resx">
-      <DependentUpon>202102070954063_AddedStockItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102081701389_AddedTransactionID.resx">
-      <DependentUpon>202102081701389_AddedTransactionID.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102111815235_InitialCreate.resx">
+      <DependentUpon>202102111815235_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
