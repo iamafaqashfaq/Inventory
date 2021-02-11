@@ -39,6 +39,21 @@ namespace Inventory.DevForms
             }
             using (AppContext context = new AppContext())
             {
+                var check = context.Users.Any();
+                if (!check)
+                {
+                    var addUser = new Model.ApplicationUser()
+                    {
+                        Username = "admin",
+                        Password = "admin",
+                        Name = "admin",
+                        Type = "Administrator"
+                    };
+                    context.Users.Add(addUser);
+                    context.SaveChanges();
+                    this.mdiForm.enableControls();
+                    this.Close();
+                }
                 var user = context.Users.FirstOrDefault(u => u.Username == textBox1.Text && u.Password == textBox2.Text);
                 if (user != null)
                 {

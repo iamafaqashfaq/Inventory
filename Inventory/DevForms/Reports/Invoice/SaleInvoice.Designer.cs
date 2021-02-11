@@ -73,6 +73,8 @@ namespace Inventory.DevForms.Reports.Invoice
             this.label3 = new DevExpress.XtraReports.UI.XRLabel();
             this.label4 = new DevExpress.XtraReports.UI.XRLabel();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
@@ -255,6 +257,8 @@ namespace Inventory.DevForms.Reports.Invoice
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel7,
+            this.xrLabel6,
             this.xrLabel5,
             this.label1});
             this.ReportHeader.Dpi = 254F;
@@ -266,7 +270,7 @@ namespace Inventory.DevForms.Reports.Invoice
             this.xrLabel5.Dpi = 254F;
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(15.99999F, 0F);
             this.xrLabel5.Name = "xrLabel5";
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(768F, 90.9464F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(768F, 51.2589F);
             this.xrLabel5.StyleName = "Title";
             this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "Al-Janat Autos";
@@ -494,6 +498,26 @@ namespace Inventory.DevForms.Reports.Invoice
             this.objectDataSource1.DataSource = typeof(Inventory.Model.StockOut);
             this.objectDataSource1.Name = "objectDataSource1";
             // 
+            // xrLabel6
+            // 
+            this.xrLabel6.Dpi = 254F;
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(0.3541652F, 51.2589F);
+            this.xrLabel6.Multiline = true;
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(506.0227F, 50.48251F);
+            this.xrLabel6.Text = "Address: K.L.P Rd., Kot Sabzal";
+            // 
+            // xrLabel7
+            // 
+            this.xrLabel7.Dpi = 254F;
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(506.3769F, 51.2589F);
+            this.xrLabel7.Multiline = true;
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(293.6231F, 50.48251F);
+            this.xrLabel7.Text = "Ph. 0301-8310381";
+            // 
             // SaleInvoice
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -582,5 +606,7 @@ namespace Inventory.DevForms.Reports.Invoice
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
     }
 }
