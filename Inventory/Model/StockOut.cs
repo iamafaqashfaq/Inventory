@@ -17,6 +17,7 @@ namespace Inventory.Model
         public int Qty { get; set; }
         public double Price { get; set; }
         public double TotalPrice { get; set; }
+        public double Discount { get; set; }
         public DateTime TransactionDate { get; set; }
         public string TransactionID { get; set; }
         [ForeignKey("StockItemId")]

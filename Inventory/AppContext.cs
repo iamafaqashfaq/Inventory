@@ -11,7 +11,7 @@ namespace Inventory
     {
         public AppContext() : base("name=conn")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AppContext, Inventory.Migrations.Configuration>());
         }
         public DbSet<Model.ApplicationUser> Users { get; set; }
         public DbSet<Model.Category> Category { get; set; }

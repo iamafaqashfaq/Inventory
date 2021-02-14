@@ -54,8 +54,17 @@ namespace Inventory.DevForms
             this.txtCus_lname = new System.Windows.Forms.TextBox();
             this.txtCus_fname = new System.Windows.Forms.TextBox();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
@@ -68,10 +77,10 @@ namespace Inventory.DevForms
             // 
             this.Button2.BackColor = System.Drawing.Color.Transparent;
             this.Button2.ForeColor = System.Drawing.Color.Black;
-            this.Button2.Location = new System.Drawing.Point(482, 14);
+            this.Button2.Location = new System.Drawing.Point(427, 14);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(88, 26);
-            this.Button2.TabIndex = 45;
+            this.Button2.TabIndex = 4;
             this.Button2.Text = "Close";
             this.Button2.UseVisualStyleBackColor = false;
             this.Button2.Click += new System.EventHandler(this.Button2_Click);
@@ -80,10 +89,10 @@ namespace Inventory.DevForms
             // 
             this.btnviewStockout.BackColor = System.Drawing.Color.Transparent;
             this.btnviewStockout.ForeColor = System.Drawing.Color.Black;
-            this.btnviewStockout.Location = new System.Drawing.Point(388, 14);
+            this.btnviewStockout.Location = new System.Drawing.Point(333, 14);
             this.btnviewStockout.Name = "btnviewStockout";
             this.btnviewStockout.Size = new System.Drawing.Size(88, 26);
-            this.btnviewStockout.TabIndex = 44;
+            this.btnviewStockout.TabIndex = 3;
             this.btnviewStockout.Text = "View List";
             this.btnviewStockout.UseVisualStyleBackColor = false;
             this.btnviewStockout.Click += new System.EventHandler(this.btnviewStockout_Click_1);
@@ -92,10 +101,10 @@ namespace Inventory.DevForms
             // 
             this.btnCus_clear.BackColor = System.Drawing.Color.Transparent;
             this.btnCus_clear.ForeColor = System.Drawing.Color.Black;
-            this.btnCus_clear.Location = new System.Drawing.Point(292, 14);
+            this.btnCus_clear.Location = new System.Drawing.Point(237, 14);
             this.btnCus_clear.Name = "btnCus_clear";
             this.btnCus_clear.Size = new System.Drawing.Size(88, 26);
-            this.btnCus_clear.TabIndex = 41;
+            this.btnCus_clear.TabIndex = 2;
             this.btnCus_clear.Text = "Clear";
             this.btnCus_clear.UseVisualStyleBackColor = false;
             this.btnCus_clear.Click += new System.EventHandler(this.btnCus_clear_Click);
@@ -104,10 +113,10 @@ namespace Inventory.DevForms
             // 
             this.btnCus_save.BackColor = System.Drawing.Color.Transparent;
             this.btnCus_save.ForeColor = System.Drawing.Color.Black;
-            this.btnCus_save.Location = new System.Drawing.Point(104, 14);
+            this.btnCus_save.Location = new System.Drawing.Point(49, 14);
             this.btnCus_save.Name = "btnCus_save";
             this.btnCus_save.Size = new System.Drawing.Size(88, 26);
-            this.btnCus_save.TabIndex = 43;
+            this.btnCus_save.TabIndex = 0;
             this.btnCus_save.Text = "Save";
             this.btnCus_save.UseVisualStyleBackColor = false;
             this.btnCus_save.Click += new System.EventHandler(this.btnCus_save_Click);
@@ -173,7 +182,7 @@ namespace Inventory.DevForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Label8.AutoSize = true;
             this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label8.Location = new System.Drawing.Point(321, 259);
+            this.Label8.Location = new System.Drawing.Point(2, 258);
             this.Label8.Name = "Label8";
             this.Label8.Size = new System.Drawing.Size(168, 24);
             this.Label8.TabIndex = 39;
@@ -201,10 +210,10 @@ namespace Inventory.DevForms
             // 
             this.btnCus_Remove.BackColor = System.Drawing.Color.Transparent;
             this.btnCus_Remove.ForeColor = System.Drawing.Color.Black;
-            this.btnCus_Remove.Location = new System.Drawing.Point(198, 14);
+            this.btnCus_Remove.Location = new System.Drawing.Point(143, 14);
             this.btnCus_Remove.Name = "btnCus_Remove";
             this.btnCus_Remove.Size = new System.Drawing.Size(88, 26);
-            this.btnCus_Remove.TabIndex = 42;
+            this.btnCus_Remove.TabIndex = 1;
             this.btnCus_Remove.Text = "Remove";
             this.btnCus_Remove.UseVisualStyleBackColor = false;
             this.btnCus_Remove.Click += new System.EventHandler(this.btnCus_Remove_Click);
@@ -232,6 +241,7 @@ namespace Inventory.DevForms
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(220, 20);
             this.txtsearch.TabIndex = 3;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // label2
             // 
@@ -246,8 +256,8 @@ namespace Inventory.DevForms
             // 
             this.textBox1.Location = new System.Drawing.Point(96, 58);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 21);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.Size = new System.Drawing.Size(205, 21);
+            this.textBox1.TabIndex = 2;
             // 
             // Label1
             // 
@@ -262,7 +272,7 @@ namespace Inventory.DevForms
             // Label5
             // 
             this.Label5.AutoSize = true;
-            this.Label5.Location = new System.Drawing.Point(305, 33);
+            this.Label5.Location = new System.Drawing.Point(316, 33);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(64, 13);
             this.Label5.TabIndex = 1;
@@ -279,10 +289,10 @@ namespace Inventory.DevForms
             // 
             // txtCus_lname
             // 
-            this.txtCus_lname.Location = new System.Drawing.Point(375, 30);
+            this.txtCus_lname.Location = new System.Drawing.Point(386, 30);
             this.txtCus_lname.Name = "txtCus_lname";
             this.txtCus_lname.Size = new System.Drawing.Size(220, 21);
-            this.txtCus_lname.TabIndex = 0;
+            this.txtCus_lname.TabIndex = 1;
             // 
             // txtCus_fname
             // 
@@ -297,6 +307,8 @@ namespace Inventory.DevForms
             // 
             this.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panel1.Controls.Add(this.label3);
+            this.Panel1.Controls.Add(this.textBox2);
             this.Panel1.Controls.Add(this.label2);
             this.Panel1.Controls.Add(this.textBox1);
             this.Panel1.Controls.Add(this.Label1);
@@ -309,6 +321,26 @@ namespace Inventory.DevForms
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(821, 88);
             this.Panel1.TabIndex = 37;
+            this.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(318, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Discount:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(386, 58);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(90, 21);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "0";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dataGridView2
             // 
@@ -327,32 +359,132 @@ namespace Inventory.DevForms
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView2.Location = new System.Drawing.Point(0, 286);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 295);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(821, 164);
+            this.dataGridView2.Size = new System.Drawing.Size(821, 155);
             this.dataGridView2.TabIndex = 40;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
+            this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
             // 
             // groupControl1
             // 
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.button1);
             this.groupControl1.Controls.Add(this.btnCus_save);
             this.groupControl1.Controls.Add(this.Button2);
             this.groupControl1.Controls.Add(this.btnCus_Remove);
             this.groupControl1.Controls.Add(this.btnviewStockout);
             this.groupControl1.Controls.Add(this.btnCus_clear);
-            this.groupControl1.Location = new System.Drawing.Point(114, 456);
+            this.groupControl1.Location = new System.Drawing.Point(109, 456);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(612, 45);
+            this.groupControl1.Size = new System.Drawing.Size(642, 45);
             this.groupControl1.TabIndex = 46;
             this.groupControl1.Text = "Actions";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(430, 259);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 24);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Total:";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(505, 258);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 24);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "0.00";
+            this.label9.TextChanged += new System.EventHandler(this.label9_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(367, 259);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 24);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "0.00";
+            this.label10.TextChanged += new System.EventHandler(this.label10_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(262, 259);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 24);
+            this.label11.TabIndex = 49;
+            this.label11.Text = "Discount:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(754, 258);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 24);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "0.00";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(573, 258);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(153, 24);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "Payable Amount:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(519, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 26);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Calculator";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StockOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 513);
+            this.ClientSize = new System.Drawing.Size(821, 531);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.Label8);
             this.Controls.Add(this.Panel2);
@@ -403,5 +535,14 @@ namespace Inventory.DevForms
         internal System.Windows.Forms.Panel Panel1;
         internal System.Windows.Forms.DataGridView dataGridView2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.TextBox textBox2;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label label9;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Label label12;
+        internal System.Windows.Forms.Label label13;
+        internal System.Windows.Forms.Button button1;
     }
 }

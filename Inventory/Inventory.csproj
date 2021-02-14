@@ -66,6 +66,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -92,12 +110,6 @@
     </Compile>
     <Compile Include="DevForms\ManageUser.Designer.cs">
       <DependentUpon>ManageUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DevForms\Reports\Invoice\SaleInvoice.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DevForms\Reports\Invoice\SaleInvoice.Designer.cs">
-      <DependentUpon>SaleInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="DevForms\Reports\ListOfItems.cs">
       <SubType>Component</SubType>
@@ -145,12 +157,17 @@
     <Compile Include="Migrations\202102111815235_InitialCreate.designer.cs">
       <DependentUpon>202102111815235_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102141042537_addedDiscount.cs" />
+    <Compile Include="Migrations\202102141042537_addedDiscount.designer.cs">
+      <DependentUpon>202102141042537_addedDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ApplicationUser.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\StockItems.cs" />
     <Compile Include="Model\StockOut.cs" />
     <Compile Include="Model\Unit.cs" />
+    <Compile Include="Model\ViewModel\InvoiceVM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportsForm.cs">
@@ -171,15 +188,16 @@
     <Compile Include="SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="DevForms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevForms\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevForms\Reports\Invoice\SaleInvoice.resx">
-      <DependentUpon>SaleInvoice.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="DevForms\Reports\Invoice.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="DevForms\Reports\ListOfItems.resx">
       <DependentUpon>ListOfItems.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +222,9 @@
     <EmbeddedResource Include="Migrations\202102111815235_InitialCreate.resx">
       <DependentUpon>202102111815235_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102141042537_addedDiscount.resx">
+      <DependentUpon>202102141042537_addedDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +246,7 @@
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Inventory.Model.ViewModel.InvoiceVM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -240,6 +262,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Includes\inventory.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
     <None Include="Resources\saveall_16x16.png" />
     <None Include="Resources\recurrence_16x16.png" />
     <None Include="Resources\trash_16x16.png" />
