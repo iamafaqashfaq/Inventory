@@ -94,9 +94,9 @@ namespace Inventory
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(-9, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 55);
+            this.label1.Size = new System.Drawing.Size(363, 55);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Al-Janat Autos";
+            this.label1.Text = "Al-Jannat Autos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2

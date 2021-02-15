@@ -218,7 +218,7 @@ namespace Inventory.DevForms.Reports
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(269.7791F, 35.80567F);
             this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.Text = "Al-Janat Autos";
+            this.xrLabel1.Text = "Al-Jannat Autos";
             // 
             // xrLabel2
             // 

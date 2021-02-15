@@ -69,6 +69,7 @@ namespace Inventory.DevForms
                     }
                 }
             }
+            txtsearch.Clear();
             textBox2.Text = "0.00";
             label12.Text = "0.00";
             label9.Text = "0.00";
@@ -156,6 +157,13 @@ namespace Inventory.DevForms
                         total = double.Parse(row.Cells[4].Value.ToString()) * double.Parse(row.Cells[3].Value.ToString());
                         row.Cells[5].Value = total;
                     }
+                    double totalw = 0;
+                    foreach (DataGridViewRow row in dataGridView2.Rows)
+                    {
+
+                        totalw = double.Parse(row.Cells[5].Value.ToString()) + totalw;
+                    }
+                    label9.Text = totalw.ToString();
                 }
             }
             catch (Exception ex)
@@ -167,6 +175,13 @@ namespace Inventory.DevForms
         private void btnCus_Remove_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
+            double totalw = 0;
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                totalw = double.Parse(row.Cells[5].Value.ToString()) + totalw;
+            }
+            label9.Text = totalw.ToString();
+            label12.Text = Convert.ToString(double.Parse(label9.Text) - double.Parse(label10.Text));
         }
 
         private void btnCus_save_Click(object sender, EventArgs e)

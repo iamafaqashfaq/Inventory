@@ -19,7 +19,6 @@ namespace Inventory.DevForms
             
             InitializeComponent();
             this.id = id;
-            MessageBox.Show(id.ToString());
             loadDataTable();
         }
         void loadDataTable()

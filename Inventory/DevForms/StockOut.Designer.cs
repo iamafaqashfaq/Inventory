@@ -55,22 +55,23 @@ namespace Inventory.DevForms
             this.txtCus_fname = new System.Windows.Forms.TextBox();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Button2
@@ -307,8 +308,8 @@ namespace Inventory.DevForms
             // 
             this.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Panel1.Controls.Add(this.label3);
             this.Panel1.Controls.Add(this.textBox2);
+            this.Panel1.Controls.Add(this.label3);
             this.Panel1.Controls.Add(this.label2);
             this.Panel1.Controls.Add(this.textBox1);
             this.Panel1.Controls.Add(this.Label1);
@@ -331,16 +332,6 @@ namespace Inventory.DevForms
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Discount:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(386, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 21);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dataGridView2
             // 
@@ -381,6 +372,18 @@ namespace Inventory.DevForms
             this.groupControl1.Size = new System.Drawing.Size(642, 45);
             this.groupControl1.TabIndex = 46;
             this.groupControl1.Text = "Actions";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(519, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 26);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Calculator";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -462,17 +465,19 @@ namespace Inventory.DevForms
             this.label13.TabIndex = 51;
             this.label13.Text = "Payable Amount:";
             // 
-            // button1
+            // textBox2
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(519, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 26);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Calculator";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.textBox2.Location = new System.Drawing.Point(388, 57);
+            this.textBox2.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.textBox2.Name = "textBox2";
+            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox2.Size = new System.Drawing.Size(120, 21);
+            this.textBox2.TabIndex = 8;
+            this.textBox2.ValueChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // StockOut
             // 
@@ -501,6 +506,7 @@ namespace Inventory.DevForms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,7 +542,6 @@ namespace Inventory.DevForms
         internal System.Windows.Forms.DataGridView dataGridView2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         internal System.Windows.Forms.Label label3;
-        internal System.Windows.Forms.TextBox textBox2;
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label label9;
         internal System.Windows.Forms.Label label10;
@@ -544,5 +549,6 @@ namespace Inventory.DevForms
         internal System.Windows.Forms.Label label12;
         internal System.Windows.Forms.Label label13;
         internal System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown textBox2;
     }
 }
