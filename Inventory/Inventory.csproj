@@ -153,6 +153,12 @@
     <Compile Include="DevForms\StockOutList.Designer.cs">
       <DependentUpon>StockOutList.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevForms\StockOutListItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevForms\StockOutListItem.Designer.cs">
+      <DependentUpon>StockOutListItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202102111815235_InitialCreate.cs" />
     <Compile Include="Migrations\202102111815235_InitialCreate.designer.cs">
       <DependentUpon>202102111815235_InitialCreate.cs</DependentUpon>
@@ -161,10 +167,19 @@
     <Compile Include="Migrations\202102141042537_addedDiscount.designer.cs">
       <DependentUpon>202102141042537_addedDiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102151751038_AddedStockOrder.cs" />
+    <Compile Include="Migrations\202102151751038_AddedStockOrder.designer.cs">
+      <DependentUpon>202102151751038_AddedStockOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102151828258_ChangedStockOrder.cs" />
+    <Compile Include="Migrations\202102151828258_ChangedStockOrder.designer.cs">
+      <DependentUpon>202102151828258_ChangedStockOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ApplicationUser.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\StockItems.cs" />
+    <Compile Include="Model\StockOrder.cs" />
     <Compile Include="Model\StockOut.cs" />
     <Compile Include="Model\Unit.cs" />
     <Compile Include="Model\ViewModel\InvoiceVM.cs" />
@@ -219,11 +234,20 @@
     <EmbeddedResource Include="DevForms\StockOutList.resx">
       <DependentUpon>StockOutList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevForms\StockOutListItem.resx">
+      <DependentUpon>StockOutListItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102111815235_InitialCreate.resx">
       <DependentUpon>202102111815235_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102141042537_addedDiscount.resx">
       <DependentUpon>202102141042537_addedDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102151751038_AddedStockOrder.resx">
+      <DependentUpon>202102151751038_AddedStockOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102151828258_ChangedStockOrder.resx">
+      <DependentUpon>202102151828258_ChangedStockOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

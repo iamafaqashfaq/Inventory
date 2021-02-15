@@ -306,7 +306,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!total.Value, "StockOut") - Sum(Fields!discount.Value, "StockOut")</Value>
+                <Value>=Sum(Fields!total.Value, "StockOut")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -456,7 +456,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Amount</Value>
+                <Value>Payable</Value>
                 <Style />
               </TextRun>
             </TextRuns>

@@ -74,6 +74,7 @@ namespace Inventory.DevForms
             this.dtglist.Size = new System.Drawing.Size(990, 546);
             this.dtglist.TabIndex = 22;
             this.dtglist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtglist_CellClick);
+            this.dtglist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtglist_CellDoubleClick);
             // 
             // simpleButton1
             // 

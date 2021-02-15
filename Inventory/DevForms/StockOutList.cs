@@ -30,18 +30,15 @@ namespace Inventory.DevForms
             {
                 using (AppContext context = new AppContext())
                 {
-                    dtglist.DataSource = context.StockOut.OrderByDescending(t => t.TransactionDate).Select(x => new
+                    dtglist.DataSource = context.StockOrders.OrderByDescending(c => c.Id).Select(x => new
                     {
-                        Id = x.Id,
+                        OrderNum = x.Id,
                         CustomerName = x.FirstName + " " + x.LastName,
-                        ContactNumber = x.ContactNumber,
-                        ItemName = x.StockItems.Name,
-                        Description = x.StockItems.Description,
-                        Qty = x.Qty,
-                        Price = x.Price,
-                        TotalPrice = x.TotalPrice,
-                        Discounted = x.Discount,
-                        TransactionDate = x.TransactionDate
+                        ContactNumber = x.contactnumber,
+                        Discounted = x.discount,
+                        TotalCharges = x.price,
+                        TotalPaid = x.payable,
+                        Date = x.TransactionDate,
                     }).ToList();
                     dtglist.Columns[0].Visible = false;
                 }
@@ -67,20 +64,16 @@ namespace Inventory.DevForms
                 {
                     using (AppContext context = new AppContext())
                     {
-                        dtglist.DataSource = context.StockOut.Where(u => u.StockItems.Name.Contains(txtsearch.Text)
-                        || u.StockItems.Description.Contains(txtsearch.Text) || u.StockItems.Category.Name.Contains(txtsearch.Text)
-                        || u.FirstName.Contains(txtsearch.Text) || u.LastName.Contains(txtsearch.Text)
-                        || u.ContactNumber.Contains(txtsearch.Text)).OrderByDescending(t => t.TransactionDate).Select(x => new
+                        dtglist.DataSource = context.StockOrders.Where(u => u.FirstName.Contains(txtsearch.Text)|| u.LastName.Contains(txtsearch.Text)
+                        || u.contactnumber.Contains(txtsearch.Text)).OrderByDescending(c => c.Id).Select(x => new
                         {
+                            OrderNum = x.Id,
                             CustomerName = x.FirstName + " " + x.LastName,
-                            ContactNumber = x.ContactNumber,
-                            ItemName = x.StockItems.Name,
-                            Description = x.StockItems.Description,
-                            Qty = x.Qty,
-                            Price = x.Price,
-                            TotalPrice = x.TotalPrice,
-                            Discounted = x.Discount,
-                            TransactionDate = x.TransactionDate
+                            ContactNumber = x.contactnumber,
+                            Discounted = x.discount,
+                            TotalCharges = x.price,
+                            TotalPaid = x.payable,
+                            Date = x.TransactionDate
                         }).ToList();
                     }
                 }
@@ -100,20 +93,20 @@ namespace Inventory.DevForms
                     MessageBox.Show("No Order Selected");
                     return;
                 }
-                var uuid = context.StockOut.Find(id);
+                var uuid = context.StockOut.FirstOrDefault(u => u.StockOrderId == id);
                 LocalReport report = new LocalReport();
                 string exeFolder = Application.StartupPath;
                 string reportPath = Path.Combine(exeFolder, @"DevForms\Reports\Invoice.rdlc");
                 report.ReportPath = reportPath;
                 report.ReportPath = reportPath;
-                ReportDataSource i = new ReportDataSource("StockOut", context.StockOut.Include(u => u.StockItems).Where(c => c.TransactionID == uuid.TransactionID).Select(x => new Model.ViewModel.InvoiceVM()
+                ReportDataSource i = new ReportDataSource("StockOut", context.StockOut.Include(u => u.StockItems).Include(o => o.StockOrder).Where(c => c.TransactionID == uuid.TransactionID).Select(x => new Model.ViewModel.InvoiceVM()
                 {
                     name = x.FirstName + " " + x.LastName,
                     stockitem = x.StockItems.Name,
                     qty = x.Qty,
                     price = x.Price,
                     total = x.TotalPrice,
-                    discount = x.Discount,
+                    discount = x.StockOrder.discount
                 }).ToList());
                 report.DataSources.Add(i);
                 PrintToPrinter(report);
@@ -224,23 +217,32 @@ namespace Inventory.DevForms
             {
                 using (AppContext context = new AppContext())
                 {
-                    dtglist.DataSource = context.StockOut.OrderByDescending(t => t.TransactionDate).Where(t => DbFunctions.TruncateTime(t.TransactionDate) >= DbFunctions.TruncateTime(dptfrom.Value.Date) && DbFunctions.TruncateTime(t.TransactionDate) <= DbFunctions.TruncateTime(dtpto.Value.Date)).Select(x => new
+                    dtglist.DataSource = context.StockOrders.OrderByDescending(t => t.TransactionDate).Where(t => DbFunctions.TruncateTime(t.TransactionDate) >= DbFunctions.TruncateTime(dptfrom.Value.Date) && DbFunctions.TruncateTime(t.TransactionDate) <= DbFunctions.TruncateTime(dtpto.Value.Date)).Select(x => new
                     {
+                        OrderNum = x.Id,
                         CustomerName = x.FirstName + " " + x.LastName,
-                        ContactNumber = x.ContactNumber,
-                        ItemName = x.StockItems.Name,
-                        Description = x.StockItems.Description,
-                        Qty = x.Qty,
-                        Price = x.Price,
-                        TotalPrice = x.TotalPrice,
-                        Discounted = x.Discount,
-                        TransactionDate = x.TransactionDate
+                        ContactNumber = x.contactnumber,
+                        Discounted = x.discount,
+                        TotalCharges = x.price,
+                        TotalPaid = x.payable,
                     }).ToList();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtglist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtglist.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtglist.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtglist.Rows[selectedrowindex];
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
+                DevForms.StockOutListItem solt = new StockOutListItem(id);
+                solt.ShowDialog();
             }
         }
     }

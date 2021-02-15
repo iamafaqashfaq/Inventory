@@ -18,5 +18,6 @@ namespace Inventory
         public DbSet<Model.Unit> Units { get; set; }
         public DbSet<Model.StockItems> StockItems { get; set; }
         public DbSet<Model.StockOut> StockOut { get; set; }
+        public DbSet<Model.StockOrder> StockOrders { get; set; }
     }
 }

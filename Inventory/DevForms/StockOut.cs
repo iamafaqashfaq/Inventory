@@ -180,6 +180,18 @@ namespace Inventory.DevForms
                         bool add = true;
                         List<Model.StockOut> stockOutList = new List<Model.StockOut>();
                         string uuid = System.Guid.NewGuid().ToString();
+                        Model.StockOrder stockOrder = new Model.StockOrder()
+                        {
+                            FirstName = txtCus_fname.Text == "" ? "Cash Sale" : txtCus_fname.Text,
+                            LastName = txtCus_lname.Text == "" ? "" : txtCus_lname.Text,
+                            contactnumber = textBox1.Text,
+                            price = double.Parse(label9.Text),
+                            discount = double.Parse(label10.Text),
+                            payable = double.Parse(label12.Text),
+                            TransactionDate = DateTime.Now,
+                        };
+                        context.StockOrders.Add(stockOrder);
+                        context.SaveChanges();
                         foreach (DataGridViewRow row in dataGridView2.Rows)
                         {
                             int id = Convert.ToInt32(row.Cells[0].Value);
@@ -200,7 +212,7 @@ namespace Inventory.DevForms
                                     TotalPrice = Convert.ToDouble(row.Cells[5].Value),
                                     TransactionDate = DateTime.Now,
                                     TransactionID = uuid,
-                                    Discount = double.Parse(textBox2.Text) 
+                                    StockOrderId = stockOrder.Id,
                                 });
                             }
                             else
@@ -219,14 +231,14 @@ namespace Inventory.DevForms
                             string exeFolder = Application.StartupPath;
                             string reportPath = Path.Combine(exeFolder, @"DevForms\Reports\Invoice.rdlc");
                             report.ReportPath = reportPath;
-                            ReportDataSource i = new ReportDataSource("StockOut", context.StockOut.Include(u => u.StockItems).Where(c => c.TransactionID == uuid).Select(x => new Model.ViewModel.InvoiceVM()
+                            ReportDataSource i = new ReportDataSource("StockOut", context.StockOut.Include(u => u.StockItems).Include(o => o.StockOrder).Where(c => c.TransactionID == uuid).Select(x => new Model.ViewModel.InvoiceVM()
                             {
                                 name = x.FirstName + " " + x.LastName,
                                 stockitem = x.StockItems.Name,
                                 qty = x.Qty,
                                 price = x.Price,
                                 total = x.TotalPrice,
-                                discount = x.Discount,
+                                discount = x.StockOrder.discount
                             }).ToList());
                             report.DataSources.Add(i);
                             PrintToPrinter(report);
@@ -359,6 +371,10 @@ namespace Inventory.DevForms
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            if(textBox2.Text == "")
+            {
+                textBox2.Text = "0.00";
+            }
             label10.Text = textBox2.Text;
         }
 
