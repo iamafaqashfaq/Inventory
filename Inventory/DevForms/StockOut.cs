@@ -174,14 +174,22 @@ namespace Inventory.DevForms
 
         private void btnCus_Remove_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
-            double totalw = 0;
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            try
             {
-                totalw = double.Parse(row.Cells[5].Value.ToString()) + totalw;
+                dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
+                double totalw = 0;
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    totalw = double.Parse(row.Cells[5].Value.ToString()) + totalw;
+                }
+                label9.Text = totalw.ToString();
+                label12.Text = Convert.ToString(double.Parse(label9.Text) - double.Parse(label10.Text));
             }
-            label9.Text = totalw.ToString();
-            label12.Text = Convert.ToString(double.Parse(label9.Text) - double.Parse(label10.Text));
+            catch (Exception)
+            {
+
+                MessageBox.Show("Cart is already empty");
+            }
         }
 
         private void btnCus_save_Click(object sender, EventArgs e)
@@ -386,11 +394,11 @@ namespace Inventory.DevForms
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if(textBox2.Text == "")
-            {
-                textBox2.Text = "0.00";
-            }
-            label10.Text = textBox2.Text;
+            //if (textBox2.Text == "")
+            //{
+            //    textBox2.Text = "0.00";
+            //}
+            label10.Text = Convert.ToString(textBox2.Value);
         }
 
         private void label9_TextChanged(object sender, EventArgs e)

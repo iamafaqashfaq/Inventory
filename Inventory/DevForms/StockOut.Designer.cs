@@ -54,6 +54,7 @@ namespace Inventory.DevForms
             this.txtCus_lname = new System.Windows.Forms.TextBox();
             this.txtCus_fname = new System.Windows.Forms.TextBox();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -64,14 +65,13 @@ namespace Inventory.DevForms
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Button2
@@ -324,6 +324,20 @@ namespace Inventory.DevForms
             this.Panel1.TabIndex = 37;
             this.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(388, 57);
+            this.textBox2.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.textBox2.Name = "textBox2";
+            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox2.Size = new System.Drawing.Size(120, 21);
+            this.textBox2.TabIndex = 8;
+            this.textBox2.ValueChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -465,20 +479,6 @@ namespace Inventory.DevForms
             this.label13.TabIndex = 51;
             this.label13.Text = "Payable Amount:";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(388, 57);
-            this.textBox2.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox2.Size = new System.Drawing.Size(120, 21);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.ValueChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
             // StockOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,10 +503,10 @@ namespace Inventory.DevForms
             this.Panel2.PerformLayout();
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
